@@ -1,5 +1,6 @@
 import time
 import sys
+from find import find
 
 green="\u001b[32m"
 Magenta="\033[95m"
@@ -25,13 +26,13 @@ def boffin():
     inp=(input("Option-> "))
     elif(inp=='exit'):
         exit()
-    elif(inp=='tools'):
+    elif(inp=='help'):
         print(green+"""Tools available
             In making, will update soon
             usage : type exit to stop
             """)
     else:
-        print(R+"Hello Moto, Have a look at options by inputting "tools".)
+        print(red+"Hello Moto, Have a look at options by inputting "help".)
     while True:
         boffin()    
         

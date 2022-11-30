@@ -24,10 +24,14 @@ print(yellow+"  Input help to see all the options")
 
 def boffin():
     inp=(input("Option-> "))
+    if(inp=='1'):
+      find()
     elif(inp=='exit'):
         exit()
     elif(inp=='help'):
         print(green+"""Tools available
+        
+          1. FindMe    Find anyone over interne using Pastbin and google. (Doxbin could be added and other services too, analyzing their relevnce if they make any to this tool)
             In making, will update soon
             usage : type exit to stop
             """)

@@ -2,9 +2,7 @@ import time
 import sys
 from rich.console import Console
 from rich.table import Table
-from pdfanalysis import pdfinfo
-from TraceIP import read_multiple_ip
-from webscrap import Links
+
 from find import find
 from eval import eval
 

@@ -2,6 +2,9 @@ import time
 import sys
 from rich.console import Console
 from rich.table import Table
+from pdfanalysis import pdfinfo
+from TraceIP import read_multiple_ip
+from webscrap import Links
 from find import find
 from eval import eval
 
@@ -12,6 +15,7 @@ red="\033[31m"
 cyan = '\033[36m' 
 
 print(Magenta+"""
+
 
                     ██████╗░░█████╗░███████╗███████╗██╗███╗░░██╗
                     ██╔══██╗██╔══██╗██╔════╝██╔════╝██║████╗░██║
@@ -27,33 +31,29 @@ print(yellow+"  Input help to see all the options")
 
 def help():
     table = Table(title="Tools list")
-    table.add_column("S.No", justify="right", style="cyan", no_wrap=True)
-    table.add_column("Tool", style="magenta")
-    table.add_column("Description", justify="right", style="green")
-    table.add_row("1", Find", "Search anything if that is in Pastebin, it also searches the keyword on google.")
-    table.add_row("2", Eval", "Check email validation and MX record.")
+    table.add_column("Tool", justify="right", style="cyan", no_wrap=True)
+    table.add_column("Description", style="magenta")
+    table.add_column("Box Office", justify="right", style="green")
+    table.add_row("1","Find", "Search anything if that is in Pastebin, it also searches the keyword on google.")
+    table.add_row("2","Eval", "Check email validation and MX record.")
     console = Console()
     console.print(table)
 
 
 
 def boffin():
-    inp=(input("Option-> "))
+    inp=(input("Option>> "))
     if(inp=='1'):
-      find()
-    elif(inp=='2'):
-      eval()
+        find()
+    elif (inp=='2'):
+        eval()
+    
     elif(inp=='exit'):
         exit()
     elif(inp=='help'):
-        print(green+"""Tools available
-        
-          1. FindMe    Find anyone over interne using Pastbin and google. (Doxbin could be added and other services too, analyzing their relevnce if they make any to this tool)
-            In making, will update soon
-            usage : type exit to stop
-            """)
+        help()
     else:
-        print(red+"Hello Moto, Have a look at options by inputting "help".)
+        print(red+"Enter a valid option")
     while True:
         boffin()    
         

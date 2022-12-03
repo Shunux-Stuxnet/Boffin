@@ -6,6 +6,7 @@ from rich.table import Table
 from find import find
 from eval import eval
 from webinfo import webinfo
+from dnsinfo import dnsinfo
 
 green="\u001b[32m"
 Magenta="\033[95m"
@@ -14,8 +15,6 @@ red="\033[31m"
 cyan = '\033[36m' 
 
 print(Magenta+"""
-
-
                     ██████╗░░█████╗░███████╗███████╗██╗███╗░░██╗
                     ██╔══██╗██╔══██╗██╔════╝██╔════╝██║████╗░██║
                     ██████╦╝██║░░██║█████╗░░█████╗░░██║██╔██╗██║
@@ -26,10 +25,10 @@ print(Magenta+"""
     """)
 
 print(cyan+"                                                        By : Team Shunux Space")
-print(cyan+"                                                        https://github.com/Shunux-Stuxnet")
-print(cyan+"                                                        https://github.com/hanma-kun")
-print(cyan+"                                                        https://github.com/N1xnonymous")
-print(yellow+"  Input help to see all the options")
+print(cyan+"https://github.com/Shunux-Stuxnet")
+print(cyan+"https://github.com/hanma-kun")
+print(cyan+"https://github.com/N1xnonymous")
+print(yellow+"                              Input help to see all the options")
 
 def help():
     table = Table(title="Tools list")
@@ -39,6 +38,7 @@ def help():
     table.add_row("1","Find", "Search keyword on Doxbin and pastebin, it also gives you option to search your keyword on Google.")
     table.add_row("2","Eval", "Check email validation, Check if it disposable email(eg. Temp Mail) and MX record.")
     table.add_row("3","Webinfo", "Check any website info.")
+    table.add_row("4","DNSinfo", "Get the DNS records of any domain.")
     console = Console()
     console.print(table)
 
@@ -52,6 +52,8 @@ def boffin():
         eval()
     elif (inp=='3'):
         webinfo()
+    elif (inp=='4'):
+        dnsinfo()
     
     elif(inp=='exit'):
         exit()

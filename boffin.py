@@ -50,6 +50,8 @@ def boffin():
         find()
     elif (inp=='2'):
         eval()
+    elif (inp=='3'):
+        webinfo()
     
     elif(inp=='exit'):
         exit()

@@ -9,9 +9,3 @@ print("No. of people following:" ,target.number_of_followings)
 print("Posts :" ,target.number_of_posts)
 print("Privacy Status :" ,target.is_private)
 print("Verification :" ,target.is_verified)
-
-
-
-
-
-

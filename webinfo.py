@@ -8,7 +8,12 @@ web = input("Enter the website you want to know about? > ")
 def webinfo():
 
     ip = socket.gethostbyname(web)
-    response = requests.get(f'https://ipapi.co/{ip}/json/').json()
+    resp = requests.get(f'https://ipapi.co/{ip}/json/').json()
+
+    url = "https://domain-reputation.whoisxmlapi.com/api/v2?apiKey=at_jrNCEHl52VXlCpYol8eQt0me9Qub1&domainName="+web
+    response = requests.request("GET", url)
+    pjson = json.loads(response.text)
+    
 
     list_response = []
     webs="https://"+web
@@ -21,11 +26,14 @@ def webinfo():
     print("Domain IP\n==========\n")
     print(ip)
     time.sleep(1)
+    print("Domain Reputation\n==================\n")
+    print (json.dumps(pjson, indent=3))
+    time.sleep(2)
     print("\nDomain Technologies\n===================\n")
     print (json.dumps(pretty_json, indent=2))
-    time.sleep(2)
+    time.sleep(3)
     print("\nAdditional data\n===============")
-    pprint(response)
+    pprint(resp)
 
 if __name__=="__main__":
    webinfo()

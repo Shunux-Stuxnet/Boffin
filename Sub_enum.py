@@ -1,13 +1,22 @@
+import requests
+import json
 import dns.resolver
 import sys
-#sys module help with cmd line input
 
-def main():
-    #domain variable to input domain name in cmd line
-    domain = sys.argv[1]
-    #array of subdomains
+def subenum():
+    print("This feature will give all the possible subdomains.\n")
+    domain = input("Enter the domain: >")
+
+    #Using whoisxmlapi 
+    url = "https://subdomains.whoisxmlapi.com/api/v1?apiKey=at_jrNCEHl52VXlCpYol8eQt0me9Qub1&domainName="+domain
+    response = requests.request("GET", url)
+    pretty_json = json.loads(response.text)
+    print (json.dumps(pretty_json, indent=3))
+
+    #Extra checking using Kapil Kataria code
     subdomain_array = ["www","mail","ftp","localhost","webmail","smtp","pop","ns1","webdisk","ns2","cpanel","whm","autodiscover","autoconfig","m","imap","test","ns","blog","pop3","dev","www2","admin","forum","news","vpn","ns3","mail2","new","mysql","old","lists","support","mobile","mx","static","docs","beta","shop","sql","secure","demo","cp","calendar","wiki","web","media","email","images","img","www1","intranet","portal","video","sip","dns2","api","cdn","stats","dns1","ns4","www3","dns","search","staging","server","mx1","chat","wap","my","svn","mail1","sites","proxy","ads","host","crm","cms","backup","mx2","lyncdiscover","info","apps","download","remote","db","forums","store","relay","files","newsletter","app","live","owa","en","start","sms","office","exchange","ipv4"]
     subdomain_enum = []
+    print("\nExtra subdomains...\n")
     for subd in subdomain_array:
         #try and except to avoid errors
         try:            
@@ -27,6 +36,6 @@ def main():
             pass
         except KeyboardInterrupt:
             quit()
-#calling the main function
-main()
 
+if __name__=="__main__":
+   subenum()

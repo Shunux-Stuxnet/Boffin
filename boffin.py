@@ -3,10 +3,12 @@ import sys
 from rich.console import Console
 from rich.table import Table
 
-from find import find
-from eval import eval
-from webinfo import webinfo
-from dnsinfo import dnsinfo
+from modules.find import find
+from modules.eval import eval
+from modules.webinfo import webinfo
+from modules.dnsinfo import dnsinfo
+from modules.subenum import subenum
+from modules.linkscrap import linkscrap
 
 green="\u001b[32m"
 Magenta="\033[95m"
@@ -15,19 +17,30 @@ red="\033[31m"
 cyan = '\033[36m' 
 
 print(Magenta+"""
+*═════════════════════════════════════════════════════════════════════*
                     ██████╗░░█████╗░███████╗███████╗██╗███╗░░██╗
                     ██╔══██╗██╔══██╗██╔════╝██╔════╝██║████╗░██║
                     ██████╦╝██║░░██║█████╗░░█████╗░░██║██╔██╗██║
                     ██╔══██╗██║░░██║██╔══╝░░██╔══╝░░██║██║╚████║
                     ██████╦╝╚█████╔╝██║░░░░░██║░░░░░██║██║░╚███║
                     ╚═════╝░░╚════╝░╚═╝░░░░░╚═╝░░░░░╚═╝╚═╝░░╚══╝
+*═════════════════════════════════════════════════════════════════════*
+""")
+print(cyan+"""
+
+                        =̵̺̟̞͌̓̔≠͚̘̫̓͑=̴̟̼̺̿͠͠=̵̺̟̞͌̓̔≠̞̠͎̽̕=̵͓̝͛̈́̒=̵̙̠̦͒̔͘≠̟͍̾̔͜͠≠͖͉̫͒͝≠̞̝͕́̽͝≠͚͍͐͛͌=̴̦̺̙̐͋͐=̵̝̪̞͐̕̚=̴̘̦̫̀̽=̵̢̙͉͑̚͝=̴̺͓͌̐̿͜≠̡̺̫̓̐̾=̵̪͕̼͋͝≠̘̟͋͆͜=̴̡̠͓̒̈́͠≠̟̺͎̈́̕͝≠̢̫̙̾͑=̵̟͙̻̐͊͘=̴͍̺͚͌͒=̴̢̝͍̈́̓͑=̵͎̻͚̽̒͆=̴̘̠͍͊̒̐=̴̼͇͊͐̓=̴̼͍͇̓̓̚=̵̘̞́̒͜͝=̴͕͇͖̔̓͘=̵͔̠̠̓̐͛≠̡̝̟͊̈́̒=̴̻̦͚͋́͐≠͖͚͙̐͆́=̵̢̼͍̒͐=̴̡̡̦͆̒͘=̴̡̡̦͆̒͘=̴̡̡̦͆̒͘
+                        =̵̢̟͍̔̈́     ╔═══════════════════╗     =̵̺̟̞͌̓̔
+                        =̵͇̞͊͆͝       By : Team Shunux Space      =̴̝̟̐̾͜͝
+                        ≠̠͔̐̐͒     ╚═══════════════════╝     =̴͙̻͔̒͋̓
+                        =̴͎͇͔͑̕ https://github.com/Shunux-Stuxnet =̵͔͙̠͊̾̀
+                        =̵͚̫͓͆͛ https://github.com/N1xnonymous    =̴̫͆̈́͜͝
+                        =̵͍̪̠̀͠͠ https://github.com/hanma-kun      =̴̞̝̠͐́
+                        ≠͔͚̒̓͌                                   =̴̟͇͕̔́̔
+                        =̵͖̠̿̀̚͜≠̝̝̓͒͝≠͖̫̼͌̈́̚=̴̫̠̙͌̓̒≠͖̻͑̾̔͜=̵̠͇͕͑̿̚=̵̠͕͚̔̀̕=̵̺͉͖̈́̒͌=̵̡̞͆͋̈́=̴͍̼͍̓̽=̵̦̻͙́͘͘=̴̡͎̠͐̈́͘≠͕̙͖̓͐̽=̴͉͔͆̓́͜=̴̦̙̈́̾̒=̴̢͎͍̒͒̐=̵͍̙͚̔̾͘=̴̠̞̈́͑͝≠͎̝͓͛͐̚=̵͕͓̠͋͒̈́=̵̙̞͉̿̈́̕=̵̟̼̼̓͝=̴̡͕̞͌͑≠͇̙̼̀͆̀=̵̢͕͔̓̓̕≠̢͙̞͆͐̕=̵̢͕̻̔̿̕≠͕̘͉͌̒̓≠̡͓̪͐̔͘≠̦̠͍̀͝=̴̺̦͕́̕͝≠͕̝̫͊̈́͝≠͕͍͎͌͋=̵̡̢̺̔̔͆=̴͖͖̝͋͆̽=̴̢̦̞͌̈́̓=̴̢̦̞͌̈́̓=̴̢̦̞͌̈́̓=̴̢̦̞͌̈́̓=̴̢̦̞͌̈́̓
     
     """)
 
-print(cyan+"                                                        By : Team Shunux Space")
-print(cyan+"https://github.com/Shunux-Stuxnet")
-print(cyan+"https://github.com/hanma-kun")
-print(cyan+"https://github.com/N1xnonymous")
+
 print(yellow+"                              Input help to see all the options")
 
 def help():
@@ -39,6 +52,9 @@ def help():
     table.add_row("2","Eval", "Check email validation, Check if it disposable email(eg. Temp Mail) and MX record.")
     table.add_row("3","Webinfo", "Check any website info.")
     table.add_row("4","DNSinfo", "Get the DNS records of any domain.")
+    table.add_row("5","Subenum", "It gives all possible subdomains with first/last time seen data. Also adds if any TLSD is left from list")
+    table.add_row("6","Link Scrapper", "Scrap all links present on any web page")
+    table.add_row("Exit","Exit", "Get out of this tool.")
     console = Console()
     console.print(table)
 
@@ -54,7 +70,11 @@ def boffin():
         webinfo()
     elif (inp=='4'):
         dnsinfo()
-    
+    elif (inp=='5'):
+        subenum()
+    elif (inp =='6'):
+        linkscrap()
+
     elif(inp=='exit'):
         exit()
     elif(inp=='help'):

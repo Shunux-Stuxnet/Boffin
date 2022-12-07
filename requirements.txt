@@ -1,2 +1,14 @@
 rich
 google=="3.0.0"
+subprocess
+sys
+pikepdf
+hachoir
+requests
+json
+os
+time
+itertools
+threading
+socket
+time

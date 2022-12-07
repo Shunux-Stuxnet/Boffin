@@ -81,7 +81,7 @@ Boffin facilitates collecting information from published or otherwise publicly a
 - Get DNS records
 - Get all subdomains
 - Scrap all links from a webite
-- Get metadata of any imageor PDF
+- Get metadata of any image or PDF
 
 
 <!-- Env Variables -->
@@ -101,7 +101,7 @@ I am using my own non-premium APIs in this project, it is heighly possible that 
 <!-- Prerequisites -->
 ### Prerequisites
 
-This project uses Yarn as package manager
+This project uses python as main language
 
 ```bash
  sudo apt-get install python3.9

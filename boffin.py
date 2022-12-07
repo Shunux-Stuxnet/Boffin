@@ -5,10 +5,11 @@ from rich.table import Table
 
 from modules.find import find
 from modules.eval import eval
-from modules.webinfo import webinfo
 from modules.dnsinfo import dnsinfo
 from modules.subenum import subenum
 from modules.linkscrap import linkscrap
+from modules.metadata import meta
+from modules.webinfo import webinfo
 
 green="\u001b[32m"
 Magenta="\033[95m"
@@ -28,10 +29,10 @@ print(Magenta+"""
 """)
 print(cyan+"""
 
-                        =̵̺̟̞͌̓̔≠͚̘̫̓͑=̴̟̼̺̿͠͠=̵̺̟̞͌̓̔≠̞̠͎̽̕=̵͓̝͛̈́̒=̵̙̠̦͒̔͘≠̟͍̾̔͜͠≠͖͉̫͒͝≠̞̝͕́̽͝≠͚͍͐͛͌=̴̦̺̙̐͋͐=̵̝̪̞͐̕̚=̴̘̦̫̀̽=̵̢̙͉͑̚͝=̴̺͓͌̐̿͜≠̡̺̫̓̐̾=̵̪͕̼͋͝≠̘̟͋͆͜=̴̡̠͓̒̈́͠≠̟̺͎̈́̕͝≠̢̫̙̾͑=̵̟͙̻̐͊͘=̴͍̺͚͌͒=̴̢̝͍̈́̓͑=̵͎̻͚̽̒͆=̴̘̠͍͊̒̐=̴̼͇͊͐̓=̴̼͍͇̓̓̚=̵̘̞́̒͜͝=̴͕͇͖̔̓͘=̵͔̠̠̓̐͛≠̡̝̟͊̈́̒=̴̻̦͚͋́͐≠͖͚͙̐͆́=̵̢̼͍̒͐=̴̡̡̦͆̒͘=̴̡̡̦͆̒͘=̴̡̡̦͆̒͘=̴̡̡̦͆̒͘
-                        =̵̢̟͍̔̈́       ╔═══════════════════╗            =̵̺̟̞͌̓̔
-                        =̵͇̞͊͆͝       By : Team Shunux Space         =̴̝̟̐̾͜͝
-                        ≠̠͔̐̐͒       ╚═══════════════════╝            =̴͙̻͔̒͋̓ 
+                        =̵̺̟̞͌̓̔≠͚̘̫̓͑=̴̟̼̺̿͠͠=̵̺̟̞͌̓̔≠̞̠͎̽̕=̵͓̝͛̈́̒=̵̙̠̦͒̔͘≠̟͍̾̔͜͠≠͖͉̫͒͝≠̞̝͕́̽͝≠͚͍͐͛͌=̴̦̺̙̐͋͐=̵̝̪̞͐̕̚=̴̘̦̫̀̽=̵̢̙͉͑̚͝=̴̺͓͌̐̿͜≠̡̺̫̓̐̾=̵̪͕̼͋͝≠̘̟͋͆͜=̴̡̠͓̒̈́͠≠̟̺͎̈́̕͝≠̢̫̙̾͑=̵̟͙̻̐͊͘=̴͍̺͚͌͒=̴̢̝͍̈́̓͑=̵͎̻͚̽̒͆=̴̘̠͍͊̒̐=̴̼͇͊͐̓=̴̼͍͇̓̓̚=̵̘̞́̒͜͝=̴͕͇͖̔̓͘=̵͔̠̠̓̐͛≠̡̝̟͊̈́̒=̴̻̦͚͋́͐≠͖͚͙̐͆́=̵̢̼͍̒͐=̴̡̡̦͆̒͘=̴̡̡̦͆̒͘=̴̡̡̦͆̒͘=̴̡̦͆̒͘
+                        =̵̢̟͍̔̈́       ╔══════════════════════╗       =̵̺̟̞͌̓̔
+                        =̵͇̞͊͆͝        By : Team Shunux Space        =̴̝̟̐̾͜͝
+                        ≠̠͔̐̐͒       ╚══════════════════════╝       =̴͙̻͔̒͋̓ 
                         =̴͎͇͔͑̕ https://github.com/Shunux-Stuxnet    =̵͔͙̠͊̾̀
                         =̵͚̫͓͆͛ https://github.com/N1xnonymous       =̴̫͆̈́͜͝ 
                         =̵͍̪̠̀͠͠ https://github.com/hanma-kun         =̴̞̝̠͐́
@@ -54,7 +55,8 @@ def help():
     table.add_row("4","DNSinfo", "Get the DNS records of any domain.")
     table.add_row("5","Subenum", "It gives all possible subdomains with first/last time seen data. Also adds if any TLSD is left from list")
     table.add_row("6","Link Scrapper", "Scrap all links present on any web page")
-    table.add_row("Exit","Exit", "Get out of this tool.")
+    table.add_row("7","MetaData extractor", "Extract the metadata of image or PDF.")
+    table.add_row("exit","Exit", "Get out of this tool.")
     console = Console()
     console.print(table)
 
@@ -74,6 +76,8 @@ def boffin():
         subenum()
     elif (inp =='6'):
         linkscrap()
+    elif (inp =='7'):
+        meta()
 
     elif(inp=='exit'):
         exit()

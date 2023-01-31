@@ -4,8 +4,8 @@ import socket
 import time
 from pprint import pprint
 wapapi = 'wgYvzU4pKd7i4UMcSPYTaKCjk2I1ILm7gKMbEHlj'
-web = input("Enter the website you want to know about? > ")
 def webinfo():
+    web = input("Enter the website you want to know about? > ")
 
     ip = socket.gethostbyname(web)
     resp = requests.get(f'https://ipapi.co/{ip}/json/').json()

@@ -110,7 +110,6 @@ This project uses python as main language
 <!-- Installation -->
 ### Installation
 
-Install my-project with npm
 
 ```bash
   git clone https://github.com/Shunux-Stuxnet/Boffin.git

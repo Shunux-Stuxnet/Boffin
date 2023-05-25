@@ -1,8 +1,8 @@
+rich
 requests
 beautifulsoup4
-googlesearch-python
+google
+pprint
 pikepdf
-hachoir-core
-hachoir-parser
-hachoir-metadata
-rich
+hachoir
+json

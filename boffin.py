@@ -13,7 +13,7 @@ from modules.webinfo import webinfo
 
 green="\u001b[32m"
 Magenta="\033[95m"
-yellow="\033[33m"
+fc="\[\033[1;92m\]" 
 red="\033[31m"
 cyan = '\033[36m' 
 
@@ -42,7 +42,7 @@ print(cyan+"""
     """)
 
 
-print(yellow+"                              Input help to see all the options")
+print(fc+"                              Input help to see all the options")
 
 def help():
     table = Table(title="Tools list")

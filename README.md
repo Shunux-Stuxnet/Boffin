@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1>Boffin\</h1>
+  <h1>Boffin</h1>
   
   <p>
     An OSINT toolkit! 
